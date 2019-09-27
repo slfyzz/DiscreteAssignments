@@ -2,18 +2,20 @@ package sample.setManipulation;
 
 public  interface setUtility {
 
-    /**
-    *the output should be the union of the two sets
-     */
-    set union(set a, set b);
+    static mySet union(mySet a, mySet b) {
+        return null;
+    }
+
+
 
     /**
     *the output should be the intersection of the
      */
-    set intersection(set a, set b);
+    mySet intersection(mySet a, mySet b);
 
     /**
      * the output should be the complement of the given set
      */
-    set complment(set a, universe u);
+    mySet complment(mySet a, myUniverse u);
+
 }
