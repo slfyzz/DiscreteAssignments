@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class myUniverse implements universe {
-    Object [] Items;
-    List<mySet> sets;
+    private Object [] Items;
+    private List<mySet> sets;
 
     myUniverse()
     {
