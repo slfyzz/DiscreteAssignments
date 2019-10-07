@@ -1,39 +1,37 @@
 package sample.setManipulation;
 
 public class mySetUtility {
-
     public static mySet union(mySet a, mySet b) {
-        mySet unionSet = new mySet();
-        for(int i = 0; i < a.getSet().getSize(); i++){
-            unionSet.add(a.getSet().get(i));
+        mySet unionSet = new mySet(a.getSetUniverse());
+        for(int i = 0; i < a.getSetUniverse().getSizeofUniverse(); i++){
+            if (a.items[i] || b.items[i])
+            {
+                unionSet.add(i);
+            }
         }
-
-        for (int i = 0; i < b.getSet().getSize(); i++){
-            unionSet.add(b.getSet().get(i));
-        }
-
         return unionSet;
     }
 
     public static mySet intersection (mySet a, mySet b){
-        mySet intersectionSet =new mySet();
-        for (int i = 0; i < b.getSet().getSize(); i++){
-            if(a.getSet().contains(b.getSet().get(i) ) ){
-                intersectionSet.add(b.getSet().get(i));
+        mySet intersectionSet =new mySet(a.getSetUniverse());
+        for(int i = 0; i < a.getSetUniverse().getSizeofUniverse(); i++){
+            if (a.items[i] && b.items[i])
+            {
+                intersectionSet.add(i);
             }
         }
         return intersectionSet;
     }
 
     public static mySet complement (mySet a, myUniverse universe){
-        mySet complementSet =new mySet();
+        mySet complementSet =new mySet(a.getSetUniverse());
 
-        for(int i = 0; i < universe.getUniverse().getSize(); i++){
-            if(!a.getSet().contains(universe.getUniverse().get(i))){
-                complementSet.add(universe.getUniverse().get(i));
+        for(int i = 0; i < a.getSetUniverse().getSizeofUniverse(); i++){
+            if (!a.items[i])
+            {
+                complementSet.add(i);
             }
         }
         return complementSet;
     }
-
 }
