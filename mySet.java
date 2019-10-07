@@ -7,15 +7,14 @@ public class mySet implements set{
 
     private myUniverse setUniverse;
     private boolean[] items;
-    private Object[] inputObjects;
-    private List<Object>addedValues;
+    private String[] inputObjects;
     mySet(myUniverse universe)
     {
         this.setUniverse = universe;
         items = new boolean[universe.getSizeofUniverse()];
         Arrays.fill(items, false);
     }
-    public void addAllElements(Object []str)
+    public void addAllElements(String []str)
     {
         Arrays.sort(str);
         inputObjects = str;

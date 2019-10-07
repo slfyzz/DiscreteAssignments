@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class myUniverse implements universe {
-    private Object [] Items;
+    private String [] Items;
     private List<mySet> sets;
 
     myUniverse()
@@ -15,7 +15,7 @@ public class myUniverse implements universe {
 
     }
 
-    public Object[] getItems() {
+    public String[] getItems() {
         return Items;
     }
 
@@ -23,8 +23,8 @@ public class myUniverse implements universe {
     {
         return Items.length;
     }
-    
-    public void addUniverseElements(long numOfItems, Object []s)
+
+    public void addUniverseElements(long numOfItems, String []s)
     {
         Arrays.sort(s);
         this.Items = s;

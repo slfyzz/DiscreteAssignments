@@ -4,6 +4,6 @@ public interface set {
     /**
     *adds a new element to the set
      */
-     void addAllElements(Object []str);
+     void addAllElements(String []str);
 
 }

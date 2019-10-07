@@ -10,6 +10,6 @@ public interface universe {
      * add a new element in the universe
      * @param str
      */
-    void  addUniverseElements(long numOfItems, Object []s);
+    void  addUniverseElements(long numOfItems, String []s);
 
 }
