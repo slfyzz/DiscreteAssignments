@@ -4,7 +4,7 @@ public class mySetUtility {
     public static mySet union(mySet a, mySet b) {
         mySet unionSet = new mySet(a.getSetUniverse());
         for(int i = 0; i < a.getSetUniverse().getSizeofUniverse(); i++){
-            if (a.items[i] || b.items[i])
+            if (a.getItems()[i] || b.getItems()[i])
             {
                 unionSet.add(i);
             }
@@ -15,7 +15,7 @@ public class mySetUtility {
     public static mySet intersection (mySet a, mySet b){
         mySet intersectionSet =new mySet(a.getSetUniverse());
         for(int i = 0; i < a.getSetUniverse().getSizeofUniverse(); i++){
-            if (a.items[i] && b.items[i])
+            if (a.getItems()[i] && b.getItems()[i])
             {
                 intersectionSet.add(i);
             }
@@ -27,7 +27,7 @@ public class mySetUtility {
         mySet complementSet =new mySet(a.getSetUniverse());
 
         for(int i = 0; i < a.getSetUniverse().getSizeofUniverse(); i++){
-            if (!a.items[i])
+            if (!a.getItems()[i])
             {
                 complementSet.add(i);
             }

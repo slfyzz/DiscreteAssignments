@@ -1,12 +1,14 @@
 package sample.setManipulation;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class mySet implements set{
 
-    myUniverse setUniverse;
-    boolean[] items;
-    Object[] inputObjects;
+    private myUniverse setUniverse;
+    private boolean[] items;
+    private Object[] inputObjects;
+    private List<Object>addedValues;
     mySet(myUniverse universe)
     {
         this.setUniverse = universe;
