@@ -8,7 +8,7 @@ public class mySet implements set{
     private myUniverse setUniverse;
     private boolean[] items;
     private String[] inputObjects;
-    mySet(myUniverse universe)
+    public mySet(myUniverse universe)
     {
         this.setUniverse = universe;
         items = new boolean[universe.getSizeofUniverse()];
@@ -17,13 +17,31 @@ public class mySet implements set{
     public void addAllElements(String []str)
     {
         Arrays.sort(str);
-        inputObjects = str;
+        int cmt = 0;
+        for (int i = 0; i < str.length - 1; i++)
+        {
+            if (str[i].equals(str[i + 1]))
+            {
+                str[i] = "-!-0";
+                cmt++;
+            }
+        }
+        this.inputObjects = new String[str.length - cmt];
+        int ptr = 0;
+        for (int i = 0;i < str.length; i++)
+        {
+            if (!str[i].equals("-!-0"))
+            {
+                inputObjects[ptr] = str[i];
+                ptr++;
+            }
+        }
         Object[] universeList = setUniverse.getItems();
         int ptr1,ptr2;
         ptr1 = ptr2 = 0;
-        while (ptr1 < str.length && ptr2 < universeList.length)
+        while (ptr1 < inputObjects.length && ptr2 < universeList.length)
         {
-            if (universeList[ptr2].equals(str[ptr1]))
+            if (universeList[ptr2].equals(inputObjects[ptr1]))
             {
                 ptr1++;
                 items[ptr2] = true;

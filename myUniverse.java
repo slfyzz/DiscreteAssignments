@@ -9,7 +9,7 @@ public class myUniverse implements universe {
     private String [] Items;
     private List<mySet> sets;
 
-    myUniverse()
+    public myUniverse()
     {
         sets = new LinkedList<>();
 
@@ -27,7 +27,25 @@ public class myUniverse implements universe {
     public void addUniverseElements(long numOfItems, String []s)
     {
         Arrays.sort(s);
-        this.Items = s;
+        int cmt = 0;
+        for (int i = 0; i < s.length - 1; i++)
+        {
+            if (s[i].equals(s[i + 1]))
+            {
+                s[i] = "-!-0";
+                cmt++;
+            }
+        }
+        this.Items = new String[s.length - cmt];
+        int ptr = 0;
+        for (int i = 0;i < s.length; i++)
+        {
+            if (!s[i].equals("-!-0"))
+            {
+                Items[ptr] = s[i];
+                ptr++;
+            }
+        }
     }
     public void addNewSet(mySet a)
     {
